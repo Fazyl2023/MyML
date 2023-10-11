@@ -4,7 +4,7 @@ from fapi import app
 
 client = TestClient(app)
 
-def test_read_predict_6():
+def test_read_predict_5():
         response = client.post("/predict/",json={"fixed_acidity": 0,
                                                  "volatile_acidity": 0,
                                                  "citric_acid": 0,
@@ -18,10 +18,10 @@ def test_read_predict_6():
                                                  "alcohol": 0})
         json_data = response.json()
         assert response.status_code == 200
-        assert json_data['Оценка вина'] == "6"
+        assert json_data['Оценка вина'] == "5"
 
 
-def test_read_predict_5():
+def test_read_predict_6():
         response = client.post("/predict/",json={
  "fixed_acidity": 7,
   "volatile_acidity": 1,
@@ -37,7 +37,7 @@ def test_read_predict_5():
 })
         json_data = response.json()
         assert response.status_code == 200
-        assert json_data['Оценка вина'] == "5"
+        assert json_data['Оценка вина'] == "6"
 
 
 def test_read_predict_7():
