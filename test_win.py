@@ -19,19 +19,20 @@ def test_read_predict_3():
         json_data = response.json()
         assert response.status_code == 200
         assert json_data['Оценка вина'] == "3"
-#,,,,,,
+
+
 def test_read_predict_4():
-        response = client.post("/predict/",json={"fixed_acidity": 6.4,
-                                                 "volatile_acidity": 0.53,
-                                                 "citric_acid": 0.09,
-                                                 "residual_sugar": 3.9,
-                                                 "chlorides": 0.12300000000000001,
-                                                 "free_sulfur_dioxide": 14.0,
-                                                 "total_sulfur_dioxide": 31.0,
-                                                 "density": 0.996, 
-                                                 "pH": 3.5, 
-                                                 "sulphates": 0.67, 
-                                                 "alcohol": 11})
+        response = client.post("/predict/",json={"fixed_acidity": 6.6,
+                                                 "volatile_acidity": 0.61,
+                                                 "citric_acid": 0,
+                                                 "residual_sugar": 1.6,
+                                                 "chlorides": 0.069,
+                                                 "free_sulfur_dioxide": 4,
+                                                 "total_sulfur_dioxide": 8.0,
+                                                 "density": 0.9939600000000001, 
+                                                 "pH": 3.33, 
+                                                 "sulphates": 0.37, 
+                                                 "alcohol": 10.4})
         json_data = response.json()
         assert response.status_code == 200
         assert json_data['Оценка вина'] == "4"
